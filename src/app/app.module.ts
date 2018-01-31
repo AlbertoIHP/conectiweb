@@ -16,11 +16,40 @@ import { HomeComponent } from './components/home/home.component';
 
 
 //Modulos externos
-import { NbThemeModule } from '@nebular/theme';
-import { NbSidebarModule, NbLayoutModule, NbSidebarService } from '@nebular/theme'
-
-
-
+import {
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatStepperModule,
+} from '@angular/material';
+import {CdkTableModule} from '@angular/cdk/table';
 
 //Servicios (Falta la asistencia)
 import { ActivityService } from './services/Activity.service'
@@ -53,15 +82,43 @@ import { routing, appRoutingProviders } from './routes/app-routing.module';
     HomeComponent
   ],
   imports: [
-    NbSidebarModule,
     ReactiveFormsModule,
     BrowserModule,
     routing,
     FormsModule,
     HttpModule,
     BrowserAnimationsModule,
-	  NbLayoutModule,
-    NbThemeModule.forRoot({ name: 'default' })
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatStepperModule,
   ],
   providers: [
     appRoutingProviders,
@@ -82,8 +139,7 @@ import { routing, appRoutingProviders } from './routes/app-routing.module';
   	TeacherService,
   	UserService,
   	AuthenticationService,
-  	EventHandlerService,
-  	NbSidebarService
+  	EventHandlerService
   ],
   bootstrap: [AppComponent]
 })

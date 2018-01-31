@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { EventHandlerService } from './services/EventHandler.service';
 import { User } from './models/User.model'
 
+
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,10 +19,13 @@ export class AppComponent
 
   constructor( public eventService: EventHandlerService )
   {
+    this.currentUser = new User()
+
 
     //Configuracion de eventos de la aplicacion
     this.eventService.isSingIn.subscribe( data => {
       this.isLogged = true
+      this.currentUser = JSON.parse(localStorage.getItem('currentUser')).email
     })
 
     this.eventService.isSingOut.subscribe( data => {
@@ -28,4 +34,11 @@ export class AppComponent
 
 
   }
+
+  changeMenu(menu1)
+  {
+    menu1.close()
+  }
+
+
 }
