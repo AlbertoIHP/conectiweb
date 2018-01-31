@@ -12,16 +12,16 @@
           </span>
 
           <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20" data-validate="Type user name">
-            <input id="first-name" class="input100" type="text" name="Correo" placeholder="Correo">
+            <input [(ngModel)]="user.email" id="first-name" class="input100" type="text" name="Correo" placeholder="Correo">
             <span class="focus-input100"></span>
           </div>
           <div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20" data-validate="Type password">
-            <input class="input100" type="password" name="pass" placeholder="Contraseña">
+            <input [(ngModel)]="user.password" class="input100" type="password" name="pass" placeholder="Contraseña">
             <span class="focus-input100"></span>
           </div>
 
           <div class="container-login100-form-btn">
-            <button class="login100-form-btn">
+            <button (click)="login()" class="login100-form-btn">
               Iniciar Sesión
             </button>
           </div>

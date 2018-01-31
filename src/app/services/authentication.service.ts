@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers,RequestOptions, Response } from '@angular/http';
 import { Observable } from 'rxjs';
-import 'rxjs/add/operator/map'
+import 'rxjs/Rx'
 import { base } from './const'
 
 
@@ -55,7 +55,7 @@ export class AuthenticationService {
   //Metodo de validacion de errores de la API (Codigos HTTP)
   capturaDeError(error)
   {
-      if (error.status === 400)
+      if (error.status === 401)
       {
         return Observable.throw('Unauthorized');
 
@@ -69,7 +69,7 @@ export class AuthenticationService {
         {
           let token = response.json() && response.json().token;
           this.token = token;
-          localStorage.setItem('currentUser', JSON.stringify({ email: username, token: token }));
+          localStorage.setItem('currentUser', JSON.stringify({ email: response.json().user, token: token }));
           return true;
         }
         else

@@ -20,11 +20,10 @@ export class AppComponent
     //Configuracion de eventos de la aplicacion
     this.eventService.isSingIn.subscribe( data => {
       this.isLogged = true
-      this.currentUser = data.user
+    })
 
-      //Se guarda en el local storage la informacion del usuario
-      localStorage.setItem('authInfo', JSON.stringify( { currentUser: data.user, token: data.token } ) )
-
+    this.eventService.isSingOut.subscribe( data => {
+      this.isLogged = false
     })
 
 
