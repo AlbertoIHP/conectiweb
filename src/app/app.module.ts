@@ -73,13 +73,31 @@ import { EventHandlerService } from './services/EventHandler.service'
 
 //Rutas
 import { routing, appRoutingProviders } from './routes/app-routing.module';
+import { TeachersComponent } from './components/statics/teachers/teachers.component';
+import { ChildrensComponent } from './components/statics/childrens/childrens.component';
+import { CoursesComponent } from './components/statics/courses/courses.component';
+import { TeachersmaintainComponent } from './components/admin/teachersmaintain/teachersmaintain.component';
+import { CoursesmaintainComponent } from './components/admin/coursesmaintain/coursesmaintain.component';
+import { ChildrensmaintainComponent } from './components/admin/childrensmaintain/childrensmaintain.component';
+import { ParentsComponent } from './components/statics/parents/parents.component';
+import { ParentsmaintainComponent } from './components/admin/parentsmaintain/parentsmaintain.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    TeachersComponent,
+    ChildrensComponent,
+    CoursesComponent,
+    TeachersmaintainComponent,
+    CoursesmaintainComponent,
+    ChildrensmaintainComponent,
+    ParentsComponent,
+    ParentsmaintainComponent,
+    ProfileComponent
   ],
   imports: [
     ReactiveFormsModule,

@@ -11,20 +11,21 @@
             Autenticación
           </span>
 
-          <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20" data-validate="Type user name">
-            <input [(ngModel)]="user.email" id="first-name" class="input100" type="text" name="Correo" placeholder="Correo">
+          <div  class="wrap-input100 rs1-wrap-input100 validate-input m-b-20" data-validate="Type user name">
+            <input [(ngModel)]="user.email" id="first-name" class="input100" type="text" name="Correo" placeholder="Correo" style="border-bottom: 0 !important; box-shadow: 0 0px 0 0 #26a69a !important ; -webkit-box-shadow: 0 !important; font-size: 18px !important; margin: 0 !important;     padding: 0 25px !important" >
             <span class="focus-input100"></span>
           </div>
-          <div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20" data-validate="Type password">
-            <input [(ngModel)]="user.password" class="input100" type="password" name="pass" placeholder="Contraseña">
+          <div  class="wrap-input100 rs2-wrap-input100 validate-input m-b-20" data-validate="Type password">
+            <input  [(ngModel)]="user.password" class="input100" type="password" name="pass" placeholder="Contraseña" style="border-bottom: 0 !important; box-shadow: 0 0px 0 0 #26a69a !important ; -webkit-box-shadow: 0 !important; font-size: 18px !important; margin: 0 !important;     padding: 0 25px !important" >
             <span class="focus-input100"></span>
           </div>
 
           <div class="container-login100-form-btn">
-            <button (click)="login()" class="login100-form-btn">
+            <button  *ngIf="!isLogging" (click)="login()" class="login100-form-btn">
               Iniciar Sesión
             </button>
           </div>
+          <mat-progress-bar color="accent" *ngIf="isLogging" mode="query"></mat-progress-bar>
 
           <div class="w-full text-center p-t-27 p-b-41">
             <span class="txt1">

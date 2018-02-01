@@ -19,14 +19,11 @@
 
       </mat-card>
 
-
-
-
-
-          <mat-expansion-panel disabled  #statics (click)="goHome()" hideToggle="true">
+          <mat-expansion-panel disabled hideToggle="true" (click)="sidenav.close()" routerLink="/home" routerLinkActive="active" (click)="changeMenu(admin,statics)">
             <mat-expansion-panel-header class="panel-nav">
               <mat-panel-title>
-                <span style="color: rgba(0,0,0,0.87)" > Mi Jardin</span>
+                <mat-icon style="color: rgb(253, 102, 84)" >home</mat-icon>
+                <span style="color: rgba(0,0,0,0.87); margin-left: 5px" > Mi Jardin</span>
               </mat-panel-title>
             </mat-expansion-panel-header>
           </mat-expansion-panel>
@@ -38,23 +35,38 @@
           <mat-expansion-panel #statics (click)="changeMenu(admin)">
             <mat-expansion-panel-header class="panel-nav">
               <mat-panel-title>
-                <span > Estadistica</span>
+                <mat-icon style="color: rgb(253, 102, 84)">trending_up</mat-icon>
+                <span style="margin-left: 5px"> Estadistica</span>
               </mat-panel-title>
             </mat-expansion-panel-header>
 
             <div >
 
               <div class="col s12" >
-                <button mat-button class="sidenavBtn" routerLink="/cit" routerLinkActive="active">
-                  <mat-icon>edit</mat-icon>
-                  <span>Citas</span>
+                <button mat-button class="sidenavBtn" routerLink="/statics/courses" routerLinkActive="active" (click)="sidenav.close()" >
+                  <mat-icon style="color: rgb(253, 102, 84)">people</mat-icon>
+                  <span style="margin-left: 5px">Cursos</span>
                 </button>
               </div>
 
               <div class="col s12">
-                <button mat-button class="sidenavBtn" routerLink="/es" routerLinkActive="active">
-                  <mat-icon>edit</mat-icon>
-                  <span>Estado Citas</span>
+                <button mat-button class="sidenavBtn" routerLink="/statics/teachers" routerLinkActive="active" (click)="sidenav.close()" >
+                  <mat-icon style="color: rgb(253, 102, 84)">edit</mat-icon>
+                  <span style="margin-left: 5px">Profesores</span>
+                </button>
+              </div>
+
+              <div class="col s12">
+                <button mat-button class="sidenavBtn" routerLink="/statics/parents" routerLinkActive="active" (click)="sidenav.close()" >
+                  <mat-icon style="color: rgb(253, 102, 84)">wc</mat-icon>
+                  <span style="margin-left: 5px">Apoderados</span>
+                </button>
+              </div>
+
+              <div class="col s12">
+                <button mat-button class="sidenavBtn" routerLink="/statics/childrens" routerLinkActive="active" (click)="sidenav.close()" >
+                  <mat-icon style="color: rgb(253, 102, 84)">face</mat-icon>
+                  <span style="margin-left: 5px">Niños</span>
                 </button>
               </div>
 
@@ -69,27 +81,40 @@
           <mat-expansion-panel #admin (click)="changeMenu(statics)">
             <mat-expansion-panel-header class="panel-nav">
               <mat-panel-title>
-                <i class="fa fa-address-book icono-nav" aria-hidden="true"></i>
-                <span > Administración</span>
+                <mat-icon style="color: rgb(253, 102, 84)">lock</mat-icon>
+                <span style="margin-left: 5px"> Administración</span>
               </mat-panel-title>
             </mat-expansion-panel-header>
 
             <div >
 
               <div class="col s12" >
-                <button mat-button class="sidenavBtn" routerLink="/cit" routerLinkActive="active">
-                  <mat-icon>edit</mat-icon>
-                  <span>Citas</span>
+                <button mat-button class="sidenavBtn" routerLink="/admin/courses" routerLinkActive="active" (click)="sidenav.close()" >
+                  <mat-icon style="color: rgb(253, 102, 84)">people</mat-icon>
+                  <span style="margin-left: 5px">Cursos</span>
                 </button>
               </div>
 
               <div class="col s12">
-                <button mat-button class="sidenavBtn" routerLink="/es" routerLinkActive="active">
-                  <mat-icon>edit</mat-icon>
-                  <span>Estado Citas</span>
+                <button mat-button class="sidenavBtn" routerLink="/admin/teachers" routerLinkActive="active" (click)="sidenav.close()" >
+                  <mat-icon style="color: rgb(253, 102, 84)">edit</mat-icon>
+                  <span style="margin-left: 5px">Profesores</span>
                 </button>
               </div>
 
+              <div class="col s12">
+                <button mat-button class="sidenavBtn" routerLink="/admin/parents" routerLinkActive="active" (click)="sidenav.close()" >
+                  <mat-icon style="color: rgb(253, 102, 84)">wc</mat-icon>
+                  <span style="margin-left: 5px">Apoderados</span>
+                </button>
+              </div>
+
+              <div class="col s12">
+                <button mat-button class="sidenavBtn" routerLink="/admin/childrens" routerLinkActive="active" (click)="sidenav.close()" >
+                  <mat-icon style="color: rgb(253, 102, 84)">face</mat-icon>
+                  <span style="margin-left: 5px">Niños</span>
+                </button>
+              </div>
 
 
             </div>
@@ -116,8 +141,15 @@
       <router-outlet></router-outlet>
 
       <mat-menu #menu="matMenu">
-        <button  mat-menu-item><mat-icon>create</mat-icon>Editar Perfil</button>
-        <button (click)="singOut()" mat-menu-item><mat-icon >close</mat-icon>Cerrar Sesion</button>
+        <button  mat-menu-item routerLink="/profile" routerLinkActive="active" (click)="sidenav.close()">
+          <mat-icon>create</mat-icon>
+          Editar Perfil
+        </button>
+
+        <button router mat-menu-item routerLink="/login" routerLinkActive="active" (click)="sidenav.close()">
+          <mat-icon >close</mat-icon>
+          Cerrar Sesion
+        </button>
       </mat-menu>
 
     </div>

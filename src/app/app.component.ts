@@ -35,9 +35,19 @@ export class AppComponent
 
   }
 
-  changeMenu(menu1)
+  changeMenu(menu1, menu2)
   {
-    menu1.close()
+    if(!menu2)
+    {
+      menu1.close()
+    }
+    else
+    {
+      console.log()
+      menu1.close()
+      menu2.close()
+    }
+
   }
 
 

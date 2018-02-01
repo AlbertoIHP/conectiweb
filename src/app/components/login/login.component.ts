@@ -11,6 +11,7 @@ import { EventHandlerService } from '../../services/EventHandler.service';
 })
 export class LoginComponent {
   public user : User
+  public isLogging: boolean
 
   constructor(
     public authService: AuthenticationService,
@@ -19,6 +20,7 @@ export class LoginComponent {
   {
     localStorage.clear()
     this.eventService.singOut()
+    this.isLogging = false
 
     this.user = new User()
     this.user.email = "user3@gmail.com"
@@ -28,12 +30,18 @@ export class LoginComponent {
 
   public login() : void
   {
+    this.isLogging = true
      this.authService.login( this.user.email, this.user.password ).subscribe( (data) => {
        console.log(data)
        if( data )
        {
+         this.isLogging = false
          this.eventService.singIn()
          this.router.navigate(['home'])
+       }
+       else
+       {
+         this.isLogging = false
        }
      })
   }

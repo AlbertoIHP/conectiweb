@@ -1,28 +1,27 @@
 
 
 
-
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
 @font-face {
-  font-family: Poppins-Regular;
-  src: url('../../../assets/fonts/poppins/Poppins-Regular.ttf');
+  font-family: Poppins-Regular !important;
+  src: url('../../../assets/fonts/poppins/Poppins-Regular.ttf') !important;
 }
 
 @font-face {
-  font-family: Poppins-Medium;
-  src: url('../../../assets/fonts/poppins/Poppins-Medium.ttf');
+  font-family: Poppins-Medium !important;
+  src: url('../../../assets/fonts/poppins/Poppins-Medium.ttf') !important;
 }
 
 @font-face {
-  font-family: Montserrat-Medium;
-  src: url('../../../assets/fonts/montserrat/Montserrat-Medium.ttf');
+  font-family: Montserrat-Medium !important;
+  src: url('../../../assets/fonts/montserrat/Montserrat-Medium.ttf') !important;
 }
 
 @font-face {
-  font-family: Montserrat-SemiBold;
-  src: url('../../../assets/fonts/montserrat/Montserrat-SemiBold.ttf');
+  font-family: Montserrat-SemiBold !important;
+  src: url('../../../assets/fonts/montserrat/Montserrat-SemiBold.ttf') !important;
 }
 
 
@@ -394,7 +393,7 @@ input.input100 {
 {
   .logoImg
   {
-    height: 23% !important;
+    height: 27% !important;
     width: 107% !important;
   }
 }

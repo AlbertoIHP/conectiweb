@@ -29,3 +29,29 @@
   justify-content: space-between;
   align-items: center;
 }
+
+@media (max-width: 599px)
+{
+  .mat-card
+  {
+      padding: 32px 16px !important;
+  }
+}
+
+.mat-card
+{
+  padding: 19px;
+}
+
+.sidenavBtn:focus
+{
+  background-color: #fda291;
+  width: 100%;
+  text-align: left;
+}
+
+.sidenavBtn
+{
+  width: 100%;
+  text-align: left;
+}
