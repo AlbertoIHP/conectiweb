@@ -64,4 +64,17 @@ export class CourseService {
 
     return this.http.delete( this.base+id, a ).map( ( res: Response ) => res.json() )
   }
+
+
+  getTeacherCourses( professorId )
+  {
+    var b = new Headers( { 'Content-Type': 'application/json', 'Authorization': 'Bearer '+this.authService.token } )
+    var a = new RequestOptions( { headers: b } )
+    console.log(b)
+
+    return this.http.get( this.base+'getcoursebyuser/'+professorId, a ).map( ( res: Response ) => res.json() )
+  }
+
+
+
 }

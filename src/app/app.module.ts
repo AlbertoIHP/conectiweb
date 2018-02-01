@@ -12,7 +12,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component'
 import { HomeComponent } from './components/home/home.component';
+import { TeachersComponent } from './components/statics/teachers/teachers.component';
+import { ChildrensComponent } from './components/statics/childrens/childrens.component';
+import { CoursesComponent } from './components/statics/courses/courses.component';
+import { TeachersmaintainComponent } from './components/admin/teachersmaintain/teachersmaintain.component';
+import { CoursesmaintainComponent } from './components/admin/coursesmaintain/coursesmaintain.component';
+import { ChildrensmaintainComponent } from './components/admin/childrensmaintain/childrensmaintain.component';
+import { ParentsComponent } from './components/statics/parents/parents.component';
+import { ParentsmaintainComponent } from './components/admin/parentsmaintain/parentsmaintain.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
+//Componentes Hijos
+import { AddcourseComponent } from './components/admin/coursesmaintain/addcourse/addcourse.component';
+import { EditcourseComponent } from './components/admin/coursesmaintain/editcourse/editcourse.component';
 
 
 //Modulos externos
@@ -73,15 +85,7 @@ import { EventHandlerService } from './services/EventHandler.service'
 
 //Rutas
 import { routing, appRoutingProviders } from './routes/app-routing.module';
-import { TeachersComponent } from './components/statics/teachers/teachers.component';
-import { ChildrensComponent } from './components/statics/childrens/childrens.component';
-import { CoursesComponent } from './components/statics/courses/courses.component';
-import { TeachersmaintainComponent } from './components/admin/teachersmaintain/teachersmaintain.component';
-import { CoursesmaintainComponent } from './components/admin/coursesmaintain/coursesmaintain.component';
-import { ChildrensmaintainComponent } from './components/admin/childrensmaintain/childrensmaintain.component';
-import { ParentsComponent } from './components/statics/parents/parents.component';
-import { ParentsmaintainComponent } from './components/admin/parentsmaintain/parentsmaintain.component';
-import { ProfileComponent } from './components/profile/profile.component';
+
 
 
 @NgModule({
@@ -97,7 +101,14 @@ import { ProfileComponent } from './components/profile/profile.component';
     ChildrensmaintainComponent,
     ParentsComponent,
     ParentsmaintainComponent,
-    ProfileComponent
+    ProfileComponent,
+    AddcourseComponent,
+    EditcourseComponent
+  ],
+  entryComponents:
+  [
+    AddcourseComponent,
+    EditcourseComponent
   ],
   imports: [
     ReactiveFormsModule,
